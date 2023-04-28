@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @book = Book.new
   end
 
   def show
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       render :edit
-  end
+    end
   end
 
 

@@ -1,9 +1,10 @@
+<p></p>
 <div class="container">
   <div class="low">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 
       <h2>User info</h2>
-      
+
       <% if @user.errors.any? %>
         <%= @user.errors.count %>errors prohibited this obj from being saved:
         <ul>
@@ -15,18 +16,18 @@
 
       <%= form_with model: @user do |f| %>
         <div class="form-group">
-          <label for="user_name">Name</label>
+          <label>Name</label><br>
           <%= f.text_field :name, autofocus: true, id:"user_name"%>
         </div>
         <div class="form-group">
-          <label for="user_image">Image</label>
+          <label>Image</label><br>
           <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
         </diV>
         <div class="form-group">
-          <label for="user_introduction">Introduction</label>
+          <label>Introduction</label><br>
           <%= f.text_area :introduction, autofocus: true, id:"user_introduction"%>
         </div>
-        <%= f.submit "Update User" %>
+        <%= f.submit "Update User", class:"btn btn-secondary" %>
       <% end %>
 
     </div>
